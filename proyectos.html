@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Inversiones y Servicios Digitales S.A.C.</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Logo ISD">
+            <div class="logo-text">
+                INVERSIONES Y SERVICIOS
+                <span>DIGITALES S.A.C.</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="proyectos.html" class="active">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">Iniciar sesión</a>
+            <a href="registro.html" class="btn-register">Registrarse</a>
+        </div>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Panel de Control</h1>
+            <p>
+                Seguimiento de proyectos digitales,
+                responsables y actividades empresariales.
+            </p>
+        </div>
+    </section>
+
+    <section class="dashboard">
+        <div class="container">
+
+            <div class="dashboard-top">
+                <div>
+                    <h2>Proyectos registrados</h2>
+                    <p style="color:#64748B;font-size:14px;">
+                        Información de ejemplo basada en los INSERT
+                        de la base de datos SQL Server.
+                    </p>
+                </div>
+
+                <span class="connection">
+                    ● Datos de referencia SQL Server
+                </span>
+            </div>
+
+            <div class="dashboard-note">
+                Esta versión utiliza datos estáticos de demostración.
+                No existe conexión en tiempo real con Amazon RDS.
+            </div>
+
+            <!-- BÚSQUEDA Y FILTRO -->
+
+            <div class="filter-bar">
+
+                <input
+                    type="search"
+                    id="searchProject"
+                    placeholder="Buscar por código, cliente o responsable..."
+                    aria-label="Buscar proyectos">
+
+                <select id="filterStatus" aria-label="Filtrar por estado">
+                    <option value="">Todos los estados</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En revision">En revisión</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+
+            </div>
+
+            <!-- TABLA DE PROYECTOS -->
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Responsable</th>
+                            <th>Estado</th>
+                            <th>Total de tareas</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="projectsTable">
+
+                        <tr>
+                            <td>PRO-2026-001</td>
+                            <td>Comercial Andina SAC</td>
+                            <td>Desarrollo Web</td>
+                            <td>Sofía Morales Campos</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-002</td>
+                            <td>Inversiones del Pacífico SAC</td>
+                            <td>Desarrollo de Software</td>
+                            <td>Sofía Morales Campos</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>3</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-003</td>
+                            <td>Grupo Empresarial Nova SAC</td>
+                            <td>Marketing Digital</td>
+                            <td>Valeria Torres Rojas</td>
+                            <td><span class="status status-review">En revisión</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-004</td>
+                            <td>Constructora Horizonte SAC</td>
+                            <td>Desarrollo Web</td>
+                            <td>Sofía Morales Campos</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-005</td>
+                            <td>Servicios Integrales del Sur SAC</td>
+                            <td>Consultoría Tecnológica</td>
+                            <td>Carlos Mendoza Torres</td>
+                            <td><span class="status status-finished">Finalizado</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-006</td>
+                            <td>Distribuidora Global SAC</td>
+                            <td>Desarrollo de Software</td>
+                            <td>Sofía Morales Campos</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-007</td>
+                            <td>Consultora Empresarial Lima SAC</td>
+                            <td>Mantenimiento Web</td>
+                            <td>Andrea Castillo Vega</td>
+                            <td><span class="status status-finished">Finalizado</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-008</td>
+                            <td>Tecnología y Negocios SAC</td>
+                            <td>Desarrollo de Software</td>
+                            <td>Sofía Morales Campos</td>
+                            <td><span class="status status-pending">Pendiente</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-009</td>
+                            <td>Comercial Andina SAC</td>
+                            <td>Mantenimiento Web</td>
+                            <td>Andrea Castillo Vega</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>PRO-2026-010</td>
+                            <td>Grupo Empresarial Nova SAC</td>
+                            <td>Marketing Digital</td>
+                            <td>Valeria Torres Rojas</td>
+                            <td><span class="status status-pending">Pendiente</span></td>
+                            <td>1</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <p id="projectCount"
+               style="margin-top:15px;color:#64748B;font-size:13px;">
+                Mostrando 10 proyectos.
+            </p>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Inversiones y Servicios Digitales S.A.C.</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

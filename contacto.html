@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Inversiones y Servicios Digitales S.A.C.</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Logo ISD">
+            <div class="logo-text">
+                INVERSIONES Y SERVICIOS
+                <span>DIGITALES S.A.C.</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">Iniciar sesión</a>
+            <a href="registro.html" class="btn-register">Registrarse</a>
+        </div>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contáctanos</h1>
+            <p>
+                Cuéntanos sobre tu empresa y el servicio tecnológico
+                que necesitas. Nuestro equipo estará preparado
+                para atender tu solicitud.
+            </p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="container">
+
+            <div class="form-container">
+
+                <h2>Registro de solicitud</h2>
+
+                <p class="form-description">
+                    Completa los siguientes campos para registrar
+                    tus datos de contacto y describir tu necesidad.
+                </p>
+
+                <form id="contactForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+                            <label for="nombre">
+                                Nombre o razón social *
+                            </label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                maxlength="150"
+                                placeholder="Ingresa tu nombre o empresa"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipoDocumento">
+                                Tipo de documento *
+                            </label>
+                            <select id="tipoDocumento"
+                                    name="tipoDocumento" required>
+                                <option value="">Seleccionar</option>
+                                <option value="RUC">RUC</option>
+                                <option value="DNI">DNI</option>
+                                <option value="CE">Carné de extranjería</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numeroDocumento">
+                                Número de documento *
+                            </label>
+                            <input
+                                type="text"
+                                id="numeroDocumento"
+                                name="numeroDocumento"
+                                maxlength="50"
+                                placeholder="Número de documento"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo">
+                                Correo electrónico *
+                            </label>
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                maxlength="100"
+                                placeholder="correo@empresa.com"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">
+                                Teléfono
+                            </label>
+                            <input
+                                type="tel"
+                                id="telefono"
+                                name="telefono"
+                                maxlength="20"
+                                placeholder="Número de contacto">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="direccion">
+                                Dirección
+                            </label>
+                            <input
+                                type="text"
+                                id="direccion"
+                                name="direccion"
+                                maxlength="200"
+                                placeholder="Dirección de la empresa">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="servicio">
+                                Servicio solicitado *
+                            </label>
+                            <select id="servicio"
+                                    name="servicio" required>
+                                <option value="">Seleccionar servicio</option>
+                                <option value="Desarrollo Web">Desarrollo Web</option>
+                                <option value="Desarrollo de Software">Desarrollo de Software</option>
+                                <option value="Marketing Digital">Marketing Digital</option>
+                                <option value="Consultoria Tecnologica">Consultoría Tecnológica</option>
+                                <option value="Mantenimiento Web">Mantenimiento Web</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="mensaje">
+                                Descripción de la solicitud *
+                            </label>
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                maxlength="1000"
+                                placeholder="Describe brevemente qué servicio necesitas..."
+                                required></textarea>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Enviar solicitud
+                    </button>
+
+                    <p id="formMessage"
+                       class="form-message"
+                       role="status"
+                       aria-live="polite"></p>
+
+                </form>
+
+                <p style="font-size:12px;color:#64748B;margin-top:20px;">
+                    * Campos obligatorios. Esta versión es demostrativa:
+                    los datos no se almacenan en una base de datos.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Inversiones y Servicios Digitales S.A.C.</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
