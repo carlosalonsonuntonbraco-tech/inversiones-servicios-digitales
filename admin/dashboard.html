@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Panel administrativo de Inversiones y Servicios Digitales S.A.C.">
+    <title>Panel Administrador | ISD</title>
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="../js/app.js" defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Logo ISD">
+            <div class="logo-text">
+                INVERSIONES Y SERVICIOS
+                <span>DIGITALES S.A.C.</span>
+            </div>
+        </a>
+
+        <button type="button" class="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../proyectos.html">Proyectos</a></li>
+            <li><a href="dashboard.html" class="active">Admin</a></li>
+            <li><a href="../perfil.html">Mi perfil</a></li>
+            <li class="nav-actions-item">
+                <div class="nav-actions">
+                    <a href="../login.html" class="btn-login">Cerrar sesión</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Panel de Administración</h1>
+            <p>
+                Gestión operativa de proyectos digitales, seguimiento de estados
+                y atención de incidencias de soporte técnico.
+            </p>
+        </div>
+    </section>
+
+    <section class="dashboard">
+        <div class="container">
+
+            <div class="dashboard-top">
+                <div>
+                    <h2>Control operativo</h2>
+                    <p style="color:#64748B;font-size:14px;">
+                        Vista administrativa para gestionar proyectos y tickets.
+                    </p>
+                </div>
+
+                <span class="connection">
+                    ● Rol Administrador
+                </span>
+            </div>
+
+            <div class="cards-grid" style="margin-bottom:35px;">
+
+                <article class="card">
+                    <div class="card-icon">01</div>
+                    <h3>Total proyectos</h3>
+                    <p id="adminTotalProjects"
+                       style="font-size:30px;font-weight:800;color:#6D28D9;">
+                        10
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">02</div>
+                    <h3>Tickets pendientes</h3>
+                    <p id="adminPendingTickets"
+                       style="font-size:30px;font-weight:800;color:#D97706;">
+                        1
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">03</div>
+                    <h3>Tickets resueltos</h3>
+                    <p id="adminResolvedTickets"
+                       style="font-size:30px;font-weight:800;color:#16A34A;">
+                        1
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="dashboard-top">
+                <div>
+                    <h2>Gestión de proyectos</h2>
+                    <p style="color:#64748B;font-size:14px;">
+                        Actualiza el estado de los proyectos registrados.
+                    </p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Responsable</th>
+                            <th>Estado actual</th>
+                            <th>Cambiar estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProjectsTable">
+                        <tr>
+                            <td>PRO-2026-001</td>
+                            <td>Comercial Andina SAC</td>
+                            <td>Desarrollo Web</td>
+                            <td>Sofía Morales Campos</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>
+                                <select class="admin-project-status" aria-label="Estado de PRO-2026-001">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso" selected>En proceso</option>
+                                    <option value="En revisión">En revisión</option>
+                                    <option value="Finalizado">Finalizado</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PRO-2026-003</td>
+                            <td>Grupo Empresarial Nova SAC</td>
+                            <td>Marketing Digital</td>
+                            <td>Valeria Torres Rojas</td>
+                            <td><span class="status status-review">En revisión</span></td>
+                            <td>
+                                <select class="admin-project-status" aria-label="Estado de PRO-2026-003">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="En revisión" selected>En revisión</option>
+                                    <option value="Finalizado">Finalizado</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PRO-2026-005</td>
+                            <td>Servicios Integrales del Sur SAC</td>
+                            <td>Consultoría Tecnológica</td>
+                            <td>Carlos Mendoza Torres</td>
+                            <td><span class="status status-finished">Finalizado</span></td>
+                            <td>
+                                <select class="admin-project-status" aria-label="Estado de PRO-2026-005">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="En revisión">En revisión</option>
+                                    <option value="Finalizado" selected>Finalizado</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top:16px;margin-bottom:35px;">
+                <button type="button" id="saveProjectsBtn" class="btn">
+                    Guardar cambios de proyectos
+                </button>
+            </div>
+
+            <div class="dashboard-top">
+                <div>
+                    <h2>Gestión de tickets de soporte</h2>
+                    <p style="color:#64748B;font-size:14px;">
+                        Modifica el estado de atención de las incidencias.
+                    </p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Asunto</th>
+                            <th>Categoría</th>
+                            <th>Prioridad</th>
+                            <th>Estado actual</th>
+                            <th>Cambiar estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTicketsTable">
+                        <tr>
+                            <td>TCK-2026-001</td>
+                            <td>Error en página web</td>
+                            <td>Desarrollo Web</td>
+                            <td>Alta</td>
+                            <td><span class="status status-pending">Pendiente</span></td>
+                            <td>
+                                <select class="admin-ticket-status" aria-label="Estado de TCK-2026-001">
+                                    <option value="Pendiente" selected>Pendiente</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="Resuelto">Resuelto</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TCK-2026-002</td>
+                            <td>Consulta sobre sistema</td>
+                            <td>Desarrollo de Software</td>
+                            <td>Media</td>
+                            <td><span class="status status-process">En proceso</span></td>
+                            <td>
+                                <select class="admin-ticket-status" aria-label="Estado de TCK-2026-002">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso" selected>En proceso</option>
+                                    <option value="Resuelto">Resuelto</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TCK-2026-003</td>
+                            <td>Actualización de contenido</td>
+                            <td>Mantenimiento Web</td>
+                            <td>Baja</td>
+                            <td><span class="status status-finished">Resuelto</span></td>
+                            <td>
+                                <select class="admin-ticket-status" aria-label="Estado de TCK-2026-003">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="Resuelto" selected>Resuelto</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top:16px;">
+                <button type="button" id="saveTicketsBtn" class="btn">
+                    Guardar cambios de tickets
+                </button>
+            </div>
+
+            <p id="adminFeedback"
+               class="form-message"
+               role="status"
+               aria-live="polite"
+               style="margin-top:16px;">
+            </p>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Inversiones y Servicios Digitales S.A.C.</p>
+        <div class="footer-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../proyectos.html">Proyectos</a>
+            <a href="../soporte.html">Soporte</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

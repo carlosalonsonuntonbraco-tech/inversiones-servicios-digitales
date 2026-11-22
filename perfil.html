@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mi perfil en la plataforma de Inversiones y Servicios Digitales S.A.C.">
+    <title>Mi Perfil | Inversiones y Servicios Digitales S.A.C.</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body class="isd-profile-page">
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Logo ISD">
+            <div class="logo-text">
+                INVERSIONES Y SERVICIOS
+                <span>DIGITALES S.A.C.</span>
+            </div>
+        </a>
+
+        <button type="button" class="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li class="nav-actions-item">
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Iniciar sesión</a>
+                    <a href="registro.html" class="btn-register">Registrarse</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Mi Perfil</h1>
+            <p>
+                Administra tu información personal, seguridad de acceso y estado
+                de tu cuenta en Inversiones y Servicios Digitales S.A.C.
+            </p>
+        </div>
+    </section>
+
+    <section class="dashboard">
+        <div class="container">
+
+            <!-- CABECERA DE PERFIL -->
+            <section class="isd-profile-header">
+                <div class="isd-profile-avatar" id="isdProfileAvatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="isd-profile-info">
+                    <h2 id="isdProfileHeaderName">Cliente Demo SAC</h2>
+                    <div class="isd-profile-details">
+                        <span><i class="fas fa-envelope"></i> <span id="isdProfileHeaderEmail">cliente@empresa.com</span></span>
+                        <span><i class="fas fa-phone"></i> <span id="isdProfileHeaderPhone">Sin teléfono registrado</span></span>
+                        <span><i class="fas fa-location-dot"></i> <span id="isdProfileHeaderAddress">Sin dirección registrada</span></span>
+                    </div>
+                </div>
+
+                <span class="isd-role-badge" id="isdProfileRoleBadge">Cliente</span>
+            </section>
+
+            <div class="isd-content-grid">
+
+                <!-- INFORMACIÓN PERSONAL -->
+                <section class="isd-profile-card">
+                    <div class="isd-card-title">
+                        <div>
+                            <h3>Información personal</h3>
+                            <p>Actualiza tus datos básicos de contacto y empresa.</p>
+                        </div>
+                        <i class="fas fa-user isd-icon-box"></i>
+                    </div>
+
+                    <form id="personalForm" novalidate>
+                        <div class="isd-form-grid">
+
+                            <label class="isd-field-label">
+                                Nombres / Razón social
+                                <div class="isd-input-box">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="profileNombres" name="nombres" required>
+                                </div>
+                            </label>
+
+                            <label class="isd-field-label">
+                                Apellidos / Complemento
+                                <div class="isd-input-box">
+                                    <i class="fas fa-id-card"></i>
+                                    <input type="text" id="profileApellidos" name="apellidos">
+                                </div>
+                            </label>
+
+                            <label class="isd-field-label">
+                                Correo electrónico
+                                <div class="isd-input-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="profileCorreo" name="correo" required>
+                                </div>
+                            </label>
+
+                            <label class="isd-field-label">
+                                Número de celular
+                                <div class="isd-input-box">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="text" id="profileCelular" name="celular" maxlength="9" placeholder="9 dígitos">
+                                </div>
+                            </label>
+
+                            <label class="isd-field-label">
+                                Tipo de usuario
+                                <div class="isd-input-box isd-input-disabled">
+                                    <i class="fas fa-shield-halved"></i>
+                                    <input type="text" id="profileRole" name="rol" value="Cliente" disabled>
+                                </div>
+                                <small class="isd-help-text">El rol se asigna como cliente por defecto y solo se modifica en base de datos.</small>
+                            </label>
+
+                            <label class="isd-field-label">
+                                Dirección de residencia / empresa
+                                <div class="isd-input-box">
+                                    <i class="fas fa-location-dot"></i>
+                                    <input type="text" id="profileDireccion" name="direccion" placeholder="Dirección de contacto">
+                                </div>
+                            </label>
+
+                        </div>
+
+                        <div class="isd-actions">
+                            <button class="btn" type="submit">
+                                <i class="fas fa-save"></i> Guardar cambios
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- SEGURIDAD -->
+                <section class="isd-profile-card">
+                    <div class="isd-card-title">
+                        <div>
+                            <h3>Seguridad</h3>
+                            <p>Administra la contraseña de tu cuenta.</p>
+                        </div>
+                        <i class="fas fa-lock isd-icon-box"></i>
+                    </div>
+
+                    <form id="passwordForm" class="isd-password-form" novalidate>
+
+                        <label class="isd-field-label">
+                            Contraseña actual
+                            <div class="isd-input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" name="actual" placeholder="Ingresa tu contraseña actual" required>
+                                <button type="button" class="isd-show-password" aria-label="Mostrar contraseña">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </label>
+
+                        <label class="isd-field-label">
+                            Nueva contraseña
+                            <div class="isd-input-box">
+                                <i class="fas fa-key"></i>
+                                <input type="password" name="nueva" placeholder="Mínimo 8 caracteres" minlength="8" required>
+                                <button type="button" class="isd-show-password" aria-label="Mostrar contraseña">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </label>
+
+                        <label class="isd-field-label">
+                            Confirmar nueva contraseña
+                            <div class="isd-input-box">
+                                <i class="fas fa-key"></i>
+                                <input type="password" name="confirmar" placeholder="Repite la nueva contraseña" minlength="8" required>
+                                <button type="button" class="isd-show-password" aria-label="Mostrar contraseña">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </label>
+
+                        <div class="isd-actions">
+                            <button class="btn" type="submit">
+                                <i class="fas fa-key"></i> Cambiar contraseña
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="isd-profile-card" style="margin-top: 20px;">
+                    <div class="isd-card-title">
+                        <div>
+                            <h3>Preferencias</h3>
+                            <p>Personaliza la apariencia de tu vista de perfil.</p>
+                        </div>
+                        <i class="fas fa-sliders isd-icon-box"></i>
+                    </div>
+
+                    <div class="isd-preference-row">
+                        <i class="fas fa-moon isd-icon-box"></i>
+                        <div class="isd-preference-text">
+                            <strong>Modo oscuro</strong>
+                            <small>Activa una apariencia oscura en esta vista.</small>
+                        </div>
+                        <label class="isd-switch">
+                            <input type="checkbox" id="darkMode">
+                            <span></span>
+                        </label>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- PRIVACIDAD Y DESACTIVACIÓN DE CUENTA -->
+            <section class="isd-profile-card isd-danger-card">
+                <div class="isd-card-title">
+                    <div>
+                        <h3>Privacidad y cuenta</h3>
+                        <p>
+                            Desactiva tu cuenta si deseas darla de baja. Se cerrará tu sesión
+                            y se bloqueará el acceso manteniendo el historial del sistema.
+                        </p>
+                    </div>
+                    <i class="fas fa-user-slash isd-icon-box isd-icon-danger"></i>
+                </div>
+
+                <div class="isd-danger-footer">
+                    <small class="isd-help-text">
+                        Modo demostración local: la desactivación actualiza el estado de la cuenta en el navegador.
+                    </small>
+                    <button type="button" class="isd-btn-danger" id="deactivate">
+                        <i class="fas fa-trash-can"></i> Eliminar / Desactivar cuenta
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="assets/logo.png" alt="Logo de la empresa">
+                    <span class="logo-text">
+                        <strong>INVERSIONES Y SERVICIOS</strong>
+                        <small>DIGITALES S.A.C.</small>
+                    </span>
+                </a>
+
+                <p>
+                    Tecnología e innovación para impulsar
+                    la transformación digital.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <a href="index.html">Inicio</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="soporte.html">Soporte</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Servicios</h4>
+                <a href="index.html#software">Desarrollo de software</a>
+                <a href="index.html#cloud">Soluciones Cloud</a>
+                <a href="index.html#consultoria">Consultoría tecnológica</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Cuenta</h4>
+                <a href="perfil.html">Mi perfil</a>
+                <a href="login.html">Iniciar sesión</a>
+                <a href="registro.html">Crear cuenta</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Inversiones y Servicios Digitales S.A.C.
+                Todos los derechos reservados.
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+<div id="toast" class="isd-toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

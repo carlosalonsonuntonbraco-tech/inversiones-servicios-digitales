@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sistema de soporte técnico de Inversiones y Servicios Digitales S.A.C.">
+    <title>Soporte | Inversiones y Servicios Digitales S.A.C.</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Logo ISD">
+            <div class="logo-text">
+                INVERSIONES Y SERVICIOS
+                <span>DIGITALES S.A.C.</span>
+            </div>
+        </a>
+
+        <button type="button" class="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+
+            <li class="nav-actions-item">
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Iniciar sesión</a>
+                    <a href="registro.html" class="btn-register">Registrarse</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</header>
+
+<main>
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>Centro de Soporte Técnico</h1>
+
+        <p>
+            Estamos aquí para ayudarte. Registra tus incidencias,
+            consulta tus solicitudes y realiza seguimiento
+            a tus tickets de soporte.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     SISTEMA DE SOPORTE
+========================================== -->
+
+<section class="dashboard">
+
+    <div class="container">
+
+        <!-- ESTADÍSTICAS -->
+
+        <div class="dashboard-top">
+
+            <div>
+
+                <h2>Panel de soporte</h2>
+
+                <p style="color:#64748B;font-size:14px;">
+                    Resumen general de solicitudes de soporte técnico.
+                </p>
+
+            </div>
+
+            <span class="connection">
+                ● Sistema de soporte disponible
+            </span>
+
+        </div>
+
+
+        <div class="cards-grid">
+
+            <article class="card">
+
+                <div class="card-icon">01</div>
+
+                <h3>Total de tickets</h3>
+
+                <p id="totalTickets"
+                    style="font-size:30px;font-weight:800;color:#6D28D9;">
+                    0
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">02</div>
+
+                <h3>Tickets pendientes</h3>
+
+                <p id="pendingTickets"
+                    style="font-size:30px;font-weight:800;color:#D97706;">
+                    0
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">03</div>
+
+                <h3>Tickets resueltos</h3>
+
+                <p id="resolvedTickets"
+                    style="font-size:30px;font-weight:800;color:#16A34A;">
+                    0
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <!-- ======================================
+             REGISTRO DE INCIDENCIAS
+        ====================================== -->
+
+        <div class="form-section">
+
+            <div class="form-container">
+
+                <h2>Registrar nueva incidencia</h2>
+
+                <p class="form-description">
+                    Completa los siguientes campos para registrar
+                    un problema o solicitar asistencia técnica.
+                </p>
+
+                <form id="supportForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label for="supportSubject">
+                                Asunto de la incidencia *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="supportSubject"
+                                name="supportSubject"
+                                maxlength="150"
+                                placeholder="Ejemplo: Error en página web"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="supportCategory">
+                                Categoría *
+                            </label>
+
+                            <select
+                                id="supportCategory"
+                                name="supportCategory"
+                                required>
+
+                                <option value="">Seleccionar categoría</option>
+
+                                <option value="Desarrollo Web">
+                                    Desarrollo Web
+                                </option>
+
+                                <option value="Desarrollo de Software">
+                                    Desarrollo de Software
+                                </option>
+
+                                <option value="Marketing Digital">
+                                    Marketing Digital
+                                </option>
+
+                                <option value="Consultoría Tecnológica">
+                                    Consultoría Tecnológica
+                                </option>
+
+                                <option value="Mantenimiento Web">
+                                    Mantenimiento Web
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="supportPriority">
+                                Nivel de prioridad *
+                            </label>
+
+                            <select
+                                id="supportPriority"
+                                name="supportPriority"
+                                required>
+
+                                <option value="">Seleccionar prioridad</option>
+
+                                <option value="Alta">Alta</option>
+
+                                <option value="Media">Media</option>
+
+                                <option value="Baja">Baja</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="supportDescription">
+                                Descripción de la incidencia *
+                            </label>
+
+                            <textarea
+                                id="supportDescription"
+                                name="supportDescription"
+                                maxlength="1000"
+                                placeholder="Describe detalladamente el problema que estás experimentando..."
+                                required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" class="btn">
+                        Registrar incidencia
+                    </button>
+
+                    <p id="supportMessage"
+                        class="form-message"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
+                <p style="font-size:12px;color:#64748B;margin-top:20px;">
+                    * Campos obligatorios.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             CONSULTAR TICKET
+        ====================================== -->
+
+        <div class="form-container" style="margin-bottom:35px;">
+
+            <h2>Consultar estado de ticket</h2>
+
+            <p class="form-description">
+                Ingresa el código de tu solicitud para consultar
+                su información y estado actual.
+            </p>
+
+            <div class="filter-bar">
+
+                <input
+                    type="search"
+                    id="searchTicket"
+                    placeholder="Ejemplo: TCK-2026-001"
+                    aria-label="Código del ticket">
+
+                <button
+                    type="button"
+                    id="searchTicketButton"
+                    class="btn">
+
+                    Consultar ticket
+
+                </button>
+
+            </div>
+
+            <p id="ticketSearchMessage"
+                class="form-message"
+                role="status"
+                aria-live="polite">
+            </p>
+
+        </div>
+
+
+        <!-- ======================================
+             HISTORIAL DE TICKETS
+        ====================================== -->
+
+        <div class="dashboard-top">
+
+            <div>
+
+                <h2>Historial de incidencias</h2>
+
+                <p style="color:#64748B;font-size:14px;">
+                    Registro de solicitudes de soporte técnico.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Código</th>
+
+                        <th>Asunto</th>
+
+                        <th>Categoría</th>
+
+                        <th>Fecha</th>
+
+                        <th>Prioridad</th>
+
+                        <th>Estado</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="ticketsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <p id="ticketCount"
+            style="margin-top:15px;color:#64748B;font-size:13px;">
+            Mostrando tickets.
+        </p>
+
+        <div class="dashboard-note" style="margin-top:25px;">
+
+            Esta versión utiliza registros temporales de demostración.
+            Los tickets no se almacenan permanentemente en una base
+            de datos ni existe conexión en tiempo real con Amazon RDS.
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==========================================
+     PIE DE PÁGINA
+========================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="logo" style="justify-content:center;">
+
+            <img src="assets/logo.png"
+                alt="Logotipo ISD"
+                onerror="this.style.display='none'">
+
+            <div class="logo-text">
+
+                INVERSIONES Y SERVICIOS
+
+                <span>DIGITALES S.A.C.</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">Inicio</a>
+
+            <a href="proyectos.html">Proyectos</a>
+
+            <a href="contacto.html">Contacto</a>
+
+            <a href="soporte.html">Soporte</a>
+
+        </div>
+
+
+        <p>
+            © 2026 Inversiones y Servicios Digitales S.A.C.
+            Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
